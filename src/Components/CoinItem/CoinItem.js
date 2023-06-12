@@ -1,12 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Coin from "../../routes/Coin/Coin";
 import {Link} from "react-router-dom";
+import axiosCoins from "../AxiosCoins/AxiosCoins";
 
 
 const CoinItem = (props) => {
+    const [favourites, setFavourites] = useState([]);
+    const [classes, setClasses] = useState({
+        add: '',
+        remove: '',
+    });
+
+    const addToFav = async () => {
+        setTimeout( async () => {
+             setFavourites(props.coins);
+             setClasses({...classes, add: '-fill'});
+             console.log(favourites)
+            try {
+                await axiosCoins.post('/favourites.json', {
+                    favourites
+                })
+            } catch (e) {
+                console.log(e)
+            }
+        }, 500)
+
+    }
+
+    const removeFav = () => {
+        setClasses({...classes, add: ' disabled'});
+    }
     return (
 
             <tr className="text-center border">
+                <td className="py-4 px-3"><i className={`bi bi-star${classes.add} text-yellow-400`} onClick={addToFav}></i></td>
+                <td className="py-4 px-3"><i className={`bi bi-trash3${classes.remove}`} onClick={removeFav}></i></td>
                 <td className="py-4 px-3">{props.coins.market_cap_rank}</td>
                 <td className="py-4 px-3">
                     <div className="flex flex-row justify-start">

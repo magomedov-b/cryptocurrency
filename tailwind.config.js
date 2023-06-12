@@ -7,6 +7,7 @@ module.exports = {
         'regal-blue': '#122640',
         'thead-color': '#122036',
         'based-bg': '#12192b',
+        'nav-bg': '#0b1426',
       }
     },
   },
