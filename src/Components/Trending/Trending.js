@@ -1,23 +1,23 @@
 import React from 'react';
 import TrendingItem from "../TrendingItem/TrendingItem";
-
-// core version + navigation, pagination modules:
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
-// import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {Link} from "react-router-dom";
-import Coin from "../../routes/Coin/Coin";
-
-// init Swiper:
+import './custom.css'
 const Trending = (props) => {
     SwiperCore.use([Autoplay])
     return (
-        <div className="bg-based-bg px-60">
-            <h1 className="text-2xl text-white  mb-5">Top Movers</h1>
+        <div className="bg-based-bg lg:px-20 py-5">
+            <h1 className="text-2xl text-white  mb-5 font-bold">Top Movers</h1>
             <Swiper
+                breakpoints={{
+                    320: {
+                        width: 320,
+                        slidesPerView: 1,
+                    },
+                }}
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
@@ -29,12 +29,9 @@ const Trending = (props) => {
             >
                 {props.trends.map(trend => (
                     <SwiperSlide key={trend.item.id}>
-                        <Link to={`/coin/${trend.item.id}`} element={<Coin key={trend.item.id}/>}>
                             <TrendingItem
                                 trend={trend}
                             />
-                        </Link>
-
                     </SwiperSlide>
 
                 ))}

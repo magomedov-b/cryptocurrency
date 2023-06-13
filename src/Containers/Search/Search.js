@@ -33,7 +33,7 @@ const Search = () => {
         <>
         <div className="flex flex-row justify-center bg-based-bg">
             <input type="text" value={value} className="border border-blue-900 rounded" onChange={event => getValue(event)}/>
-            <button className="bg-blue-500 text-white px-5 py-3 mx-3 rounded" onClick={searchCoin}>Search</button>
+            <button className="bg-blue-500 text-white px-3 py-2 mx-3 rounded " onClick={searchCoin}> <i className="bi bi-search"></i></button>
         </div>
             <FoundedCoins coins={coins}/>
         </>

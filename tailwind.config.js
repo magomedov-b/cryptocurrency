@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
   theme: {
+
     extend: {
       colors: {
         'regal-blue': '#122640',

@@ -6,7 +6,7 @@ const FavouriteItem = (props) => {
     return (
             <tr className="text-center border">
                 <td className="py-4 px-3"></td>
-                <td className="py-4 px-3">{props.favourites.market_cap_rank}</td>
+                <td className="min-[320px]:hidden min-[700px]:table-cell py-4 px-3">{props.favourites.market_cap_rank}</td>
                 <td className="py-4 px-3">
                     <div className="flex flex-row justify-start">
                         <img className="" src={props.favourites.image} alt={props.favourites.id} width={44} height={34}/>
@@ -16,10 +16,12 @@ const FavouriteItem = (props) => {
                         </div>
                     </div>
                 </td>
-                <td className="py-4 px-3">${props.favourites.current_price}</td>
-                <td className={`py-4 px-3 ${props.favourites.market_cap_change_percentage_24h > 0 ? "text-green-600" : "text-red-600"}`}>{(props.favourites.market_cap_change_percentage_24h).toFixed(2)}%</td>
-                <td className={`py-4 px-3 ${props.favourites.market_cap_change_24h > 0 ? "text-green-600" : "text-red-600"}`}>$ {(props.favourites.market_cap_change_24h / 1000000000).toFixed(2)} B</td>
-                <td className="py-4 px-3">{(props.favourites.market_cap/ 1000000000).toFixed(2)} B</td>
+                <td className="py-4 px-3">${props.favourites.current_price}
+                    <p className={`min-[320px]:block min-[700px]:hidden py-4 px-3 ${props.favourites.market_cap_change_percentage_24h > 0 ? "text-green-600" : "text-red-600"}`}>{(props.favourites.market_cap_change_percentage_24h).toFixed(2)}%</p>
+                </td>
+                <td className={`min-[320px]:hidden min-[700px]:table-cell py-4 px-3 ${props.favourites.market_cap_change_percentage_24h > 0 ? "text-green-600" : "text-red-600"}`}>{(props.favourites.market_cap_change_percentage_24h).toFixed(2)}%</td>
+                <td className={`min-[320px]:hidden min-[700px]:table-cell py-4 px-3 ${props.favourites.market_cap_change_24h > 0 ? "text-green-600" : "text-red-600"}`}>$ {(props.favourites.market_cap_change_24h / 1000000000).toFixed(2)} B</td>
+                <td className="min-[320px]:hidden min-[700px]:table-cell py-4 px-3">{(props.favourites.market_cap/ 1000000000).toFixed(2)} B</td>
                 <td>
                     <Link to={`/coin/${props.favourites.id}`} element={<Coin key={props.favourites.id}/>}>
                         <span className="bg-blue-500 rounded-2xl px-3 py-1">Trade</span>

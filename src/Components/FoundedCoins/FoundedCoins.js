@@ -4,7 +4,7 @@ import FoundedCoinItem from "../FoundedCoinItem/FoundedCoinItem";
 const FoundedCoins = (props) => {
     return (
         <div className="bg-regal-blue text-white">
-            <div className="flex flex-row flex-wrap justify-center">
+            <div className="flex flex-row flex-wrap justify-center ">
                 {props.coins.map((coin) => (
                     <FoundedCoinItem
                         key={coin.id}
