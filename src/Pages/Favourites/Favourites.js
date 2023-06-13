@@ -27,12 +27,12 @@ const Favourites = () => {
                 <thead>
                 <tr className="bg-thead-color">
                     <th className="uppercase py-4 px-3"></th>
-                    <th className="min-[320px]:hidden min-[700px]:table-cell uppercase py-4 px-3">rank</th>
+                    <th className="@media(min-width:700px)]:table-cell [@media(min-width:320px)]:hidden uppercase py-4 px-3">rank</th>
                     <th className="uppercase py-4 px-3 text-left ">name</th>
                     <th className="uppercase py-4 px-3">price</th>
-                    <th className="min-[320px]:hidden min-[700px]:table-cell uppercase py-4 px-3">24h change</th>
-                    <th className="min-[320px]:hidden min-[700px]:table-cell uppercase py-4 px-3">24h volume</th>
-                    <th className="min-[320px]:hidden min-[700px]:table-cell uppercase py-4 px-3">market cap</th>
+                    <th className="@media(min-width:700px)]:table-cell [@media(min-width:320px)]:hidden uppercase py-4 px-3">24h change</th>
+                    <th className="@media(min-width:700px)]:table-cell [@media(min-width:320px)]:hidden uppercase py-4 px-3">24h volume</th>
+                    <th className="@media(min-width:700px)]:table-cell [@media(min-width:320px)]:hidden uppercase py-4 px-3">market cap</th>
                     <th className="uppercase py-4 px-3">trade</th>
                 </tr>
                 </thead>

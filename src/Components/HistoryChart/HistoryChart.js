@@ -52,7 +52,7 @@ const HistoryChart = () => {
     ));
 
     const options = {
-        maintainAspectRatio : false,
+        response: true,
         plugins: {
             legend: {
                 position: 'top' ,

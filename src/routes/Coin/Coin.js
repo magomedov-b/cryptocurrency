@@ -34,7 +34,7 @@ const Coin = () => {
                     <img src={src} alt={response.name} width={44} height={44} />
                     <h1 className="text-2xl text-white mb-2 capitalize font-bold">{response.name}</h1>
                 </div>
-                <p className="mt-6 min-[320]:text-sm max-[540]:text-lg text-white [&>a]:text-blue-500 [&>a]:underline" dangerouslySetInnerHTML={{__html:description}}></p>
+                <p className="mt-6 @media(min-width:320px)]:text-sm [@media(max-width:540px)]:text-lg text-white [&>a]:text-blue-500 [&>a]:underline" dangerouslySetInnerHTML={{__html:description}}></p>
             </div>
             <HistoryChart/>
         </div>

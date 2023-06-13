@@ -11,7 +11,6 @@ const Search = () => {
     const getValue = (event) => {
         const inputValue = event.target.value;
         setValue(inputValue);
-        console.log(value);
     }
 
     const searchCoin = () => {
@@ -20,7 +19,6 @@ const Search = () => {
                 try {
                     const response = await axios(searchUrl);
                         setCoins(response.data.coins)
-                    console.log(response.data.coins)
                 }catch (e) {
                     console.error(e.message)
                 }
