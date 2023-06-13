@@ -28,13 +28,13 @@ const Coin = () => {
     },[id])
 
     return (
-        <div className="px-60 bg-based-bg md:px-10">
+        <div className="lg:px-20 bg-based-bg md:px-10">
             <div className="my-6 py-10">
                 <div className="flex gap-6 items-center justify-center ">
-                    <img src={src} alt={response.name}  />
+                    <img src={src} alt={response.name} width={44} height={44} />
                     <h1 className="text-2xl text-white mb-2 capitalize font-bold">{response.name}</h1>
                 </div>
-                <p className="mt-6 text-white text-lg [&>a]:text-blue-500 [&>a]:underline" dangerouslySetInnerHTML={{__html:description}}></p>
+                <p className="mt-6 min-[320]:text-sm max-[540]:text-lg text-white [&>a]:text-blue-500 [&>a]:underline" dangerouslySetInnerHTML={{__html:description}}></p>
             </div>
             <HistoryChart/>
         </div>
